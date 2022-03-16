@@ -69,15 +69,15 @@ Artifactid: myproject
 
 ## Add App
 
-* add package com.test777767ltd to src/main/java
-* add class App to com.test777767ltd 
+* add package com.test777767ont to src/main/java
+* add class App to com.test777767ont 
 * add config.properties to src/main/resources
 
 ## Add TestApp
-* add package com.test777767ltd to src/test/java
-* add class ApipTest to com.test777767ltd 
+* add package com.test777767ont to src/test/java
+* add class AppTest to com.test777767ont 
 
-## About slj4 warning, change the pom.xml
+## About slfj4 warning, change the pom.xml
 
 * You will need to add to the pom this:
 
@@ -105,10 +105,55 @@ Artifactid: myproject
 
 * note:  [INFO] Building jar: /Users/steve/projects/home/simple_maven/target/simple_maven-1.0-SNAPSHOT.jar
 
-## todo
+## add a class we can run. 
 
-* manifest
-* running jar
+* add in Main.java and MainTest.java
+* build and test:
+
+```
+[~/projects/home/simple_maven]  (master) $ java -cp target/simple_maven-1.0-SNAPSHOT.jar com.test777767ont.Main
+Maven 4tw?
+
+```
+
+## Runnable jar, aka - add manifest
+
+Add the following in the pom.xml
+
+```
+
+    <build>
+        <plugins>
+            <plugin>
+
+                <!-- Building an executable jar -->
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+
+                            <!-- give full qualified name of your main class-->
+                            <mainClass>com.test777767ont.Main</mainClass>
+
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+```
+
+Then run with:
+
+```
+[~/projects/home/simple_maven]  (master) $ java -jar target/simple_maven-1.0-SNAPSHOT.jar
+Maven 4tw?
+```
+
 
 
 
