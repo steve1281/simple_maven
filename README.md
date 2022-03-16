@@ -17,6 +17,15 @@ git init
 * XML formatted 
 * describes dependencies that need to be brought in
 * describes plugins that manage project configuration
+* File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent! Fix with:
+
+```
+<properties>
+    ...
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+</properties>
+```
 
 ## create the project
 
